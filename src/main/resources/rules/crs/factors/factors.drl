@@ -1,0 +1,14 @@
+package rules.crs.factors;
+
+import java.util.Map;
+import com.diligesoft.sheelon.model.rates.FactorType;
+
+global Map<FactorType, Object> factors;
+
+rule "Marital Status"
+no-loop
+when
+    S:String()
+then
+    factors.put(FactorType.MaritalStatus, "Married");
+end
